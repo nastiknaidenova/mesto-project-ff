@@ -1,3 +1,6 @@
+import '../css/index.css';
+import initialCards from './cards.js';
+
 const cardsList = document.querySelector('.places__list');
 
 const createCard = (cardName, cardLink, deleteHandler) => {
