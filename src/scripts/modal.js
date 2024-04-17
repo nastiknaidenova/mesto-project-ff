@@ -20,8 +20,8 @@ const handleCloseByClick = (evt) => {
 }
 
 const handleCloseByEscape = (evt) => {
-    const openedPopup = document.querySelector('.popup_is-opened');
     if (evt.key === 'Escape') {
+        const openedPopup = document.querySelector('.popup_is-opened');
         closePopupWindow(openedPopup);
     }
 }

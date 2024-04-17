@@ -54,6 +54,7 @@ const handleAddCardFormSubmit = (evt) => {
     );
     cardsList.prepend(newCard);
     closePopupWindow(popupTypeNewCard);
+    evt.target.reset();
 }
 
 
