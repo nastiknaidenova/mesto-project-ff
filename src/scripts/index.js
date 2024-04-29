@@ -5,7 +5,7 @@ import {
 } from './modal.js';
 import { enableValidation, clearValidation } from './validation.js';
 import { 
-    getInitialCards, getUser, setUser, setCard, setAvatar 
+    getCardsFromServer, getUser, setUser, setCard, setAvatar 
 } from './api.js';
 
 const validationConfig = {
@@ -123,7 +123,7 @@ const renderCard = (card, author) => {
 }
 
 // Create Promises
-Promise.all([getUser(), getInitialCards()])
+Promise.all([getUser(), getCardsFromServer()])
     .then(([user, cards]) => {
         userId = user._id
         profileTitle.textContent = user.name;

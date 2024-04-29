@@ -1,5 +1,5 @@
 export { createCard, handleDeleteCard, handleCardLike };
-import { deleteCardRequest, setLike, deleteLike } from "./api";
+import { deleteCardFromServer, setLike, unsetLike } from "./api";
 
 const createCard = (
     card, author, deleteHandler, imageHandler, likeHandler
@@ -32,7 +32,6 @@ const createCard = (
             evt.target.classList.contains('card__like-button_is-active')
         );
     });
-
     return cardItem;
 }
 
@@ -48,7 +47,7 @@ const toggleLike = (buttonLikeElement, isLiked, likesCount) => {
 
 const handleCardLike = (cardId, buttonLikeElement, isLiked) => {
     if (isLiked) {
-        deleteLike(cardId)
+        unsetLike(cardId)
             .then((result) => {
                 toggleLike(buttonLikeElement, isLiked, result.likes.length)
             })
@@ -68,7 +67,7 @@ const handleCardLike = (cardId, buttonLikeElement, isLiked) => {
 }
 
 const handleDeleteCard = (cardId, cardItem) => { 
-    deleteCardRequest(cardId)
+    deleteCardFromServer(cardId)
         .then((res) => {
             cardItem.remove(); 
         })
