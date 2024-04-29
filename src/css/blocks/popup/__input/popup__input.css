@@ -20,3 +20,29 @@
     line-height: 15px;
   }
 }
+
+/* New Classes */
+.popup__input_type_error {
+  border-bottom: 1px solid #FF0000;
+}
+
+.popup__input-error {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  text-align: start;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: #FF0000;
+  margin-top: -5px;
+  margin-bottom: 13px;
+}
+
+.popup__input-error:last-of-type {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.popup__error_visible {
+  opacity: 1;
+}
